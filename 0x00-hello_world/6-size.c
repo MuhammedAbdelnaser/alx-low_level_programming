@@ -12,9 +12,9 @@ int main()
     double doubleType;
     char charType;
 
-printf("Size of a char: %zu byte(s)\n", sizeof(charType));
-printf("Size of an int: %zu bytes(s)\n", sizeof(intType));
-printf("Size of a float: %zu bytes(s)\n", sizeof(floatType));
-printf("Size of a double: %zu bytes(s)\n", sizeof(doubleType));
+printf("Size of a char: %d byte(s)\n", sizeof(charType));
+printf("Size of an int: %d bytes(s)\n", sizeof(intType));
+printf("Size of a float: %d bytes(s)\n", sizeof(floatType));
+printf("Size of a double: %d bytes(s)\n", sizeof(doubleType));
 return (0);
 }
