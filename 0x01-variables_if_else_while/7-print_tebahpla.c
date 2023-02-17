@@ -11,7 +11,7 @@ int main(void)
 
 	for(c = 'z';c >= 'a';c--)
 	{
-		printf("%c\n", c);
+		printf("%c", c);
 	}
 
 	return (0);
