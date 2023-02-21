@@ -8,38 +8,42 @@
  */
 void print_times_table(int n)
 {
-int i, j, k, l, m;
+int i, j, k;
 
-if (n > 15 || n < 0)
-return;
-
+if (n >= 0 && n <= 15)
+{
 for (i = 0; i <= n; i++)
 {
 for (j = 0; j <= n; j++)
 {
-k = i * j;
-l = k / 100;
-m = (k / 10) % 10;
-k = k % 10;
-if (l > 0)
-_putchar(l + '0');
-else if (j != 0)
-_putchar(' ');
-if (m > 0 || l > 0)
-_putchar(m + '0');
-else if (j != 0)
-_putchar(' ');
+k = j * i;
+if (j == 0)
+{
 _putchar(k + '0');
-if (j != n)
+} else if (k < 10 && j != 0)
 {
 _putchar(',');
 _putchar(' ');
-if ((i * (j + 1)) < 100)
 _putchar(' ');
-if ((i * (j + 1)) < 10)
 _putchar(' ');
+_putchar(k + '0');
+} else if (k >= 10 && k < 100)
+{
+_putchar(',');
+_putchar(' ');
+_putchar(' ');
+_putchar((k / 10) + '0');
+_putchar((k % 10) + '0');
+} else if (k >= 100)
+{
+_putchar(',');
+_putchar(' ');
+_putchar((k / 100) + '0');
+_putchar(((k / 10) % 10) + '0');
+_putchar((k % 10) + '0');
 }
 }
 _putchar('\n');
+}
 }
 }
