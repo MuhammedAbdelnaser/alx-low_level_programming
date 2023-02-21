@@ -1,20 +1,16 @@
 #include "main.h"
 
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * print_alphabet - print all alphabet in lowercase
  */
-int main(void)
+void print_alphabet(void)
 {
-    char *sh = "abcdefghijklmnopqrstuvwxyz";
+    char letter;
 
-    while (*sh)
-    {
-        _putchar(*sh);
-        sh++;
-    }
+    for (letter = 'a'; letter <= 'z'; letter++)
+    
+    _putchar(letter);
+
     _putchar('\n');
 
-    return (0);
 }
