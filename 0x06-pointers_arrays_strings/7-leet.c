@@ -9,17 +9,19 @@ char *leet(char *s)
 {
 int i =0, j;
 
-char a[] = "aAeEoOtTlL";
-char b[] = "4433007711";
+char *letters = "aAeEoOtTlL";
+char *numbers = "4433007711";
 
-for (i = 0; *(s + i); i++)
+while (*(s + i))
 {
-for (j = 0; j <= 9; j++)
+for (j = 0; j < 10; j++)
 {
-if (a[j] == s[i])
-{s[i] = b[j];
+if (*(s + i) == *(letters + j))
+{
+*(s + i) = *(numbers + j);
 }
 }
+i++;
 }
 return (s);
 }
