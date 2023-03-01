@@ -1,9 +1,9 @@
 #include "main.h"
+
 /**
  * Prototype: char *string_toupper(char *);
  * Return: the pointer to the changed string
  */
-
 char *string_toupper(char *s)
 {
 int i = 0;
