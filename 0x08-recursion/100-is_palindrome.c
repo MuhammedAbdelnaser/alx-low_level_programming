@@ -40,7 +40,7 @@ return (0);
  */
 int is_palindrome(char *s)
 {
-	if (*s == '\0')
+if (*s == '\0')
 {
 return (1);
 }
