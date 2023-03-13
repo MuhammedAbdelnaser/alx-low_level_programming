@@ -9,15 +9,15 @@
 int main(int argc, char **argv)
 {
 int i, j;
-if (argc < 2)
+
+if (argc < 3)
 {
-    printf("Error\n");
+printf("Error\n");
+return (1);
 }
-for (i = 1; i < argc; i++)
-{
-    j = atoi(argv[i]);
-    j *= atoi(argv[i + 1]);
-    printf("%d\n", j);
-}
+i = atoi(argv[1]);
+j *= atoi(argv[2]);
+printf("%d\n", j);
+
 return (0);
 }
