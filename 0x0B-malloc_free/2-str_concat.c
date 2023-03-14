@@ -38,9 +38,13 @@ if (result == NULL)
 return (NULL);
 
 for (i = 0; i < len1; i++)
+{
 result[i] = s1[i];
+}
 for (j = 0; j < len2; j++, i++)
+{
 result[i] = s2[j];
+}
 result[len] = '\0';
 
 return (result);
