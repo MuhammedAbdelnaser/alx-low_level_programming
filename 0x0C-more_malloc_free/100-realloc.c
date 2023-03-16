@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
 * _realloc - A function that reallocates a memory block using malloc and free
 * @ptr: pointer to the memory previously allocated
@@ -20,7 +19,9 @@ if (ptr == NULL) /* treat as normal malloc */
 {
 ptr = malloc(new_size);
 if (ptr == NULL)
+{
 return (NULL);
+}
 return (ptr);
 }
 if (new_size == 0 && ptr)
@@ -32,12 +33,10 @@ new_location = malloc(new_size);
 new_ptr = ptr;
 if (old_size > new_size)
 {
-
 old_size = new_size;
 }	
 for (i = 0; i < old_size; i++)
 {
-
 new_location[i] = new_ptr[i];
 }
 free(ptr);
