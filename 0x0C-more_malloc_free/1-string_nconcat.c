@@ -1,44 +1,48 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * string_nconcat - a function that concatenates two strings.
- * @s1: first char
- * @s2: secound char
- * @n: unsigned int
- * Return: If the function fails, it should return NULL
- */
+ * string_nconcat - Concatinate first string
+ * and n chars from the second string.
+ *
+ * @s1: First string .
+ * @s2: Second string.
+ * @n: Numbers of chars to concatinate from the second string.
+ * Return: Pointer to the new string.
+ **/
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int a, b, c;
 	char *s;
+	unsigned int s1_length = 0, s2_length = 0, k = 0;
 
-	if (s1 == NULL)
-	{
-		a = 0;
-	}
+	if (s1 != NULL)
+		for (; s1[s1_length]; s1_length++)
+		;
+	if (s2 != NULL)
+		for (; s2[s2_length]; s2_length++)
+		;
+	if (n >= s2_length)
+		s = malloc(sizeof(char) * (s1_length + s2_length + 1));
 	else
 	{
-		for (a = 0; s1[a]; ++a)
-		;
+		s = malloc(sizeof(char) * (s1_length + n + 1));
+		s2_length = n;
 	}
-	if (s2 == NULL)
-	{
-		b = 0;
-	}
-	else
-	{
-		for (b = 0; s2[b]; ++b)
-		;
-	}
-	if (b > n)
-		b = n;
-	s = malloc(siceof(char) * (a + b + 1));
 	if (s == NULL)
 		return (NULL);
-	for (c = 0; c < a; c++)
-		s[c] = s1[c];
-	for (c = 0; c < b; c++)
-		s[c + a] = s2[c];
-	s[a + b] = '\0';
+
+	while (k < s1_length)
+	{
+		s[k] = s1[k];
+		k++;
+	}
+
+	while (k < s1_length + s2_length)
+	{
+		s[k] = s2[k - s1_length];
+		k++;
+	}
+	s[k] = '\0';
 	return (s);
 }
