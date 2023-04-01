@@ -15,7 +15,9 @@ list_t *add, *tmp;
 
 add = malloc(sizeof(list_t));
 if (add == NULL)
+{
 return (NULL);
+}
 add->str = strdup(str);
 
 add->len = strlen(str);
@@ -26,7 +28,8 @@ if (*head == NULL)
 return (add);
 }
 tmp = *head;
-while (tmp->next) {
+while (tmp->next) 
+{
 tmp = tmp->next;
 }
 tmp->next = add;
